@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="results.css"/>
+    <link rel="icon" type="image/svg+xml" href="/public/pdlogo.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>Parkinder</title>
+  </head>
+  <body>
+    <div class="brand">
+      <img class="logo" src="/public/pdlogo.svg" alt="Parkinder logo" >
+      <h1>Parkinder</h1>
+    </div>
+    <div class="greeting">
+      <h1>Results</h1>
+    </div>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">
+                <i class='bx bx-home-alt nav__icon' aria-hidden="true"></i>
+                <span class="nav__name sr-only">Home</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#community" class="nav__link">
+                <i class='bx bx-group nav__icon' aria-hidden="true"></i>
+                <span class="nav__name sr-only">Community</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#account" class="nav__link">
+                <i class='bx bx-cog nav__icon' aria-hidden="true"></i>
+                <span class="nav__name sr-only">Account</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="card">
+        <div class="card-inner">
+          <h2>The Results Based on Your Voice Suggest:</h2>
+          <h2 id="score" class="score">{{ score }}</h2>
+          <p>You have <span class="mesg">{{ score }}</span> Chances of Getting Parkinson's Disease</p>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

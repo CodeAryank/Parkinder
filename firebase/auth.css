@@ -1,0 +1,99 @@
+:root{
+    font-size: 16px;
+}
+
+body {
+    font-family: Bricolage Grotesque;
+    margin: 0;
+    padding: 0;
+    background:white;
+    font-family: Bricolage Grotesque;
+    font-weight: 400;
+    height: 100vh;
+  width: 100vw;
+  background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(191,169,255,1) 51%, rgba(255,255,255,1) 100%);
+background-repeat: no-repeat;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #ffffff84;
+    padding: 20px;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+
+#signup-container{
+    margin-top: 5rem;
+}
+#login-container{
+    margin-top: 50%;
+    margin-bottom: 50%;
+}
+
+
+  h2 {
+    text-align: center;
+    color: #696969;
+  }
+.form-group {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.form-group input,
+.form-group select {
+    font-family: Bricolage Grotesque;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #b29ebf;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.form-group button {
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    background: rgb(190,198,242);
+    background: linear-gradient(180deg, rgba(190,198,242,1) 1%, rgba(34,59,108,1) 100%);
+    color: #fff;
+    cursor: pointer;
+    font-family: Bricolage Grotesque;
+    font-size: 1rem;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+  .logout-btn {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+.is-hidden{
+    display: none;
+}
+
+.toggle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.switch{
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    color: #552574;
+    cursor: pointer;
+    font-family: Bricolage Grotesque;
+    font-size: 1rem;
+    text-decoration: none;
+}

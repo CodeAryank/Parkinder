@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/svg+xml" href="public/pdlogo.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <title>Parkinder</title>
+  </head>
+  <body>
+    <div class="top">
+      <div>
+      <div class="brand">
+        <img class="logo" src="public/logo.svg" alt="logo" >
+        <h1>Parkinder</h1>
+      </div>
+      <div class="greeting">
+        <h1>
+          Hello, Aryan
+        </h1>
+        <div>
+          <img src="public/ac.svg" alt="Profile Picture" id="ppic"/>
+        </div>
+      </div>
+    </div>
+    </div>
+    <header class="header" id="header">
+      <nav class="nav container">
+
+          <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                  <li class="nav__item">
+                      <a href="#home" class="nav__link active-link">
+                          <i class='bx bx-home-alt nav__icon'></i>
+                          <!-- <span class="nav__name">Home</span> -->
+                      </a>
+                  </li>
+                  
+                  <li class="nav__item">
+                      <a href="#community" class="nav__link">
+                          <i class='bx bx-group nav__icon'></i>
+                          <!-- <span class="nav__name">Community</span> -->
+                      </a>
+                  </li>
+
+                  <li class="nav__item">
+                      <a href="#account" class="nav__link">
+                          <i class='bx bx-cog nav__icon'></i>
+                          <!-- <span class="nav__name">Account</span> -->
+                      </a>
+                  </li>
+              </ul>
+          </div>
+
+      </nav>
+  </header>
+
+    <main id="home-page">
+
+      <button class="mic-toggle" id="mic">
+        <span class="material-icons">
+          <img class="mic-icon" src="public/mic-icon.svg" alt="mic" />
+        </span>
+      </button>
+
+      <div id="timer" class="cssbuttons-io-button">
+        00:00
+      </div>
+
+      <div class="instructions">
+        <p>
+          Press the Mic Button above to start recording.
+        </p>
+      </div>
+
+
+      <audio id="playback" class="playback is-hidden" controls></audio>
+      <a class="downloadAlt is-hidden" id="download-alt"></a>
+        <div class="download-container is-hidden">
+          <a class="download-link is-hidden" id="download-link">Upload!</a>
+
+        </div>
+      
+  
+    </main>
+
+    <!-- <div class="progress">
+      <div class="color"></div>
+    </div> -->
+
+
+    <div id="results-page" class="results-page is-hidden">
+      <div class="card">
+        <div class="card-inner">
+          <h2>The Results Based on Your Voice Suggest:</h2>
+          <h2 id="score" class="score">{{ score }}</h2>
+          <p>You have <span class="mesg">{{ score }}</span> Chances of Getting Parkinson's Disease</p>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js" integrity="sha512-xT0S/xXvkrfkRXGBPlzZPCAncnMK5c1N7slRkToUbv8Z901aUEuKO84tLy8dWU+3ew4InFEN7TebPaVMy2npZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

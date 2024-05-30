@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="public/pdlogo.svg" />
+    <link rel="stylesheet" href="auth.css"/>
+    <title>Sign Up & Login</title>
+    <style>
+      :root{
+    font-size: 16px;
+}
+
+body {
+  background-image: url('/webApp/public/Home.png');
+    font-family: Bricolage Grotesque;
+    margin: 0;
+    padding: 0;
+    background:white;
+    font-family: Bricolage Grotesque;
+    font-weight: 400;
+  background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(191,169,255,1) 51%, rgba(255,255,255,1) 100%);
+background-repeat: no-repeat;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #ffffff84;
+    padding: 20px;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+}
+
+
+
+  h2 {
+    text-align: center;
+    color: #696969;
+  }
+.form-group {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.form-group input,
+.form-group select {
+    font-family: Bricolage Grotesque;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #b29ebf;
+    border-radius: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 1rem;
+    width: 10rem;
+    height: 3rem;
+    background: rgb(190,198,242);
+    background: linear-gradient(180deg, rgba(190,198,242,1) 1%, rgba(34,59,108,1) 100%);
+    color: #fff;
+    cursor: pointer;
+    font-family: Bricolage Grotesque;
+    font-size: 1rem;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+  .logout-btn {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+.is-hidden{
+    display: none;
+}
+
+.toggle{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.switch{
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    color: #552574;
+    cursor: pointer;
+    font-family: Bricolage Grotesque;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.circle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background-color: #e5c0fcb7;
+  margin: 0rem;
+  
+}
+
+.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  transition: opacity 1s ease-out;
+  cursor: pointer;
+}
+
+.circle h3{
+  font-weight: 400;
+  padding: 0px;
+  margin-top: -1.5rem;
+  color:#343038;
+}
+
+.circle h1{
+  margin-top: 0rem;
+  color: #67497c;
+
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="landing" class="landing">
+      <div id="circle" class="circle">
+        <svg class="logo" width="48" height="48" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.81478 3.36821C11.2574 5.22996 14.0553 7.42093 16.0484 10.5936C17.9149 13.5598 18.1475 18.7425 16.0901 21.6217C14.3686 24.0338 11.6937 24.338 9.6433 22.1764C6.98928 19.3781 6.51343 16.0218 7.32878 12.3516C7.79126 10.2725 8.27298 8.1929 8.19492 6.03127C8.16444 5.18596 8.13718 4.34608 7.81478 3.36821Z" fill="#7C7676"/>
+          <path d="M17.7566 21.839C18.148 21.1953 18.403 20.4505 18.5746 19.71C19.5504 15.4943 18.1667 10.8994 15.3758 7.62681C15.2464 7.4747 15.1085 7.30086 15.0609 7.09822C15.0042 6.84995 15.1144 6.78802 15.2881 6.65438C15.6702 6.36066 16.0586 6.07508 16.4531 5.79766C17.2412 5.24426 18.051 4.72418 18.8826 4.23742C19.115 4.10088 19.3492 3.96742 19.5851 3.83704C19.0729 5.96607 19.4461 8.20158 19.8722 10.3502C20.2984 12.4988 20.7785 14.693 20.4727 16.8628C20.2953 18.073 19.8798 19.2346 19.2509 20.2781C18.622 21.3216 17.7927 22.2257 16.8124 22.9364C17.1885 22.6302 17.5082 22.2586 17.7566 21.839Z" fill="#7C7676"/>
+          <path d="M1.74679 6.86137C1.76711 6.77662 1.98097 6.83964 2.04567 6.8467C2.18824 6.86227 2.33081 6.88038 2.47339 6.90103C3.04369 6.97636 3.60917 7.07704 4.16984 7.20308C4.85403 7.3567 5.52972 7.54711 6.19404 7.7735C6.35444 7.82783 6.52392 7.88976 6.65117 8.00656C6.9987 8.32654 6.90887 8.8937 6.79178 9.35493C6.29563 11.3107 5.81283 13.3039 5.86576 15.3243C5.94971 18.5496 7.46438 21.6907 9.86016 23.8084C9.70992 23.6753 9.52172 23.5726 9.36133 23.4503C9.18917 23.3192 9.02129 23.1832 8.85768 23.0424C8.02329 22.3242 7.30095 21.4817 6.71533 20.5434C6.61624 20.3847 6.52143 20.2236 6.43089 20.0599C5.29315 17.9998 4.84244 15.6372 4.31848 13.3381C4.08644 12.3206 3.83408 11.3052 3.49672 10.317C3.15935 9.32885 2.74125 8.3776 2.17826 7.50676C2.10697 7.39811 2.03479 7.29109 1.96173 7.18569C1.91147 7.11453 1.75321 6.96839 1.74786 6.88201C1.74666 6.8752 1.7463 6.86827 1.74679 6.86137Z" fill="#7C7676"/>
+          <path d="M21.5314 14.0248C21.393 12.4836 21.0657 10.9613 20.6995 9.45706C20.5926 9.02951 20.4605 8.53025 20.5787 8.09076C20.7016 7.63388 20.992 7.66213 21.4245 7.57195C22.4582 7.35464 23.4986 7.18261 24.5458 7.05585C24.6168 7.04162 24.6901 7.04479 24.7597 7.06508C25.0024 7.15961 24.9131 7.5274 24.7891 7.75991C22.7376 11.5855 22.7574 16.2815 20.7305 20.1212C21.448 18.4632 21.6667 16.6156 21.586 14.806C21.5735 14.5452 21.5553 14.2848 21.5314 14.0248Z" fill="#7C7676"/>
+          </svg>
+          
+          <h1>Parkinder</h1>
+          <h3>The Parkinsons Finder</h3>
+
+      </div>
+    </div>
+
+
+    <div id="signup-container" class="container is-hidden">
+      <h2>Register</h2>
+      <form id="signup-form" class="form-group">
+
+        <input id="first-name" type="text" placeholder="First Name" />
+        <input id="last-name"type="text" placeholder="Last Name" />
+        <input id="phone" type="tel" placeholder="Phone Number" />
+        <input id="email" type="email" placeholder="email" />
+
+        <select id ="gender">
+          <option value="" disabled selected>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <input id="age" type="number" placeholder="Age" />
+        <input id="password" type="password" placeholder="password" />
+        <button id="sub" type="submit">Sign Up</button>
+      </form>
+      <div class="toggle">
+      <p>Already Registered?</p>
+      <a href="#login-container" id="switch-to-login" class="switch">
+          Login ↗
+      </a>
+    </div>
+    </div>
+
+    <div id="login-container" class="container is-hidden">
+      <h2>Login</h2>
+      <form id="login-form" class="form-group">
+        <input id="login-email" type="email" placeholder="email" />
+        <input id="login-password" type="password" placeholder="password" />
+        <a href="/webApp/index.html"><button type="submit">Login</button></a>
+      </form>
+      <div class="toggle">
+        <p>New Here?</p>
+        <a href="#signup-container" id="switch-to-signup" class="switch">
+           Register ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="logout-btn is-hidden">
+      <button id="logout-btn">Logout</button>
+    </div>
+  </body>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+    } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+    import { getDatabase, ref, set, get, child,push, update, remove } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+    
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = 
+    {
+    apiKey: "AIzaSyB7JoMThXxuW_c255QMIl14vixIWOvPfl4",
+    authDomain: "project1-e6b9b.firebaseapp.com",
+    databaseURL: "https://project1-e6b9b-default-rtdb.firebaseio.com",
+    projectId: "project1-e6b9b",
+    storageBucket: "project1-e6b9b.appspot.com",
+    messagingSenderId: "628224827852",
+    appId: "1:628224827852:web:6bfdced70e257c1f2cfd69",
+    measurementId: "G-DPJP575YXS"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    // Get a reference to the database service
+    const database = getDatabase(app);
+
+    console.log(app);
+
+    //----- New Registration code start
+      // Event listener for signup form submission
+    document.getElementById("signup-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const data = {
+        firstname: document.getElementById("first-name").value,
+        lastname: document.getElementById("last-name").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        gender: document.getElementById("gender").value,
+        age: document.getElementById("age").value
+      };
+      createUserWithEmailAndPassword(auth, data.email, document.getElementById("password").value)
+        .then((userCredential) => {
+          set(ref(database, 'users/' + userCredential.user.uid), data)
+            .then(() => {
+              alert("Registration successful!");
+            })
+            .catch((error) => {
+              console.error("Error adding document: ", error);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    });
+
+    //----- End
+
+    
+    //----- Login code start
+    document.getElementById("login-form").addEventListener("submit", function () {
+        event.preventDefault();
+        var email = document.getElementById("login-email").value;
+        var password = document.getElementById("login-password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user);
+            alert(user.email + " Login successfully!!!");
+            document.getElementById("logout-btn").style.display = "block";
+            document.getElementById("login-email").value = "";
+            document.getElementById("login-password").value = "";
+
+            // window.location.href = "http://localhost:5173"
+            window.location.href = "/questions/qn.html"
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+            alert(errorMessage);
+            document.getElementById("login-email").value = "";
+            document.getElementById("login-password").value = "";
+          });
+      });
+    //----- End
+
+    //----- Logout code start
+    document.getElementById("logout-btn").addEventListener("click", function () {
+        signOut(auth)
+          .then(() => {
+            // Sign-out successful.
+            console.log("Sign-out successful.");
+            alert("Sign-out successful.");
+            document.getElementById("logout-btn").style.display = "none";
+          })
+          .catch((error) => {
+            // An error happened.
+            console.log("An error happened.");
+          });
+      });
+
+    document.getElementById("switch-to-login").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("signup-container").classList.add("is-hidden");
+    document.getElementById("login-container").classList.remove("is-hidden");
+  });
+
+  document.getElementById("switch-to-signup").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("login-container").classList.add("is-hidden");
+    document.getElementById("signup-container").classList.remove("is-hidden");
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('circle').addEventListener('click', function(event) {
+    document.getElementById("landing").style.display = "none"; // Hide the landing div
+    document.getElementById('circle').classList.add("is-hidden");
+    document.getElementById("login-container").classList.remove("is-hidden");
+  });
+
+  // Other event listeners and Firebase code here
+});
+
+
+  </script>
+</html>

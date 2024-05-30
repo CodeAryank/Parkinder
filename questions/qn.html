@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="qn.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="intro">Tell us about yourself</h1>
+    <div class="question" id="step1">
+        <h2>Question 1:</h2>
+        <form id="questionForm1">
+            <p class="qn-text" >Do you experience tremors, especially at rest?</p>
+            <input type="radio" id="q1_yes" name="answer1" value="yes">
+            <label for="q1_yes">Yes</label><br>
+            <input type="radio" id="q1_no" name="answer1" value="no">
+            <label for="q1_no">No</label><br>
+            <button class="nav-btn" type="button" onclick="nextStep(2)">Next</button>
+        </form>
+    </div>
+
+    <div class="question" id="step2" style="display: none;">
+        <h2>Question 2:</h2>
+        <form id="questionForm2">
+            <p class="qn-text" >Have you noticed stiffness or rigidity in your muscles?</p>
+            <input type="radio" id="q2_yes" name="answer2" value="yes">
+            <label for="q2_yes">Yes</label><br>
+            <input type="radio" id="q2_no" name="answer2" value="no">
+            <label for="q2_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(1)">Previous</button>
+            <button class="nav-btn"  type="button" onclick="nextStep(3)">Next</button>
+        </form>
+    </div>
+
+    <div class="question" id="step3" style="display: none;">
+        <h2>Question 3:</h2>
+        <form id="questionForm3">
+            <p class="qn-text" >Do you have difficulty with balance or coordination?</p>
+            <input type="radio" id="q3_yes" name="answer3" value="yes">
+            <label for="q3_yes">Yes</label><br>
+            <input type="radio" id="q3_no" name="answer3" value="no">
+            <label for="q3_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(2)">Previous</button>
+            <button class="nav-btn"  type="button" onclick="nextStep(4)">Next</button>
+        </form>
+    </div>
+
+
+    <div class="question" id="step4" style="display: none;">
+        <h2>Question 4:</h2>
+        <form id="questionForm4">
+            <p class="qn-text" >Have you noticed changes in your handwriting, such as it becoming smaller?</p>
+            <input type="radio" id="q4_yes" name="answer4" value="yes">
+            <label for="q4_yes">Yes</label><br>
+            <input type="radio" id="q4_no" name="answer4" value="no">
+            <label for="q4_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(3)">Previous</button>
+            <button class="nav-btn"  type="button" onclick="nextStep(5)">Next</button>
+        </form>
+    </div>
+
+
+    <div class="question" id="step5" style="display: none;">
+        <h2>Question 5:</h2>
+        <form id="questionForm5">
+            <p class="qn-text" >Do you have trouble with fine motor skills, like buttoning a shirt or tying shoelaces?</p>
+            <input type="radio" id="q5_yes" name="answer5" value="yes">
+            <label for="q5_yes">Yes</label><br>
+            <input type="radio" id="q5_no" name="answer5" value="no">
+            <label for="q5_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(4)">Previous</button>
+            <button class="nav-btn"  type="button" onclick="nextStep(6)">Next</button>
+        </form>
+    </div>
+
+
+    <div class="question" id="step6" style="display: none;">
+        <h2>Question 6:</h2>
+        <form id="questionForm6">
+            <p class="qn-text" >Have you experienced changes in your speech, such as speaking softly or slurring words?</p>
+            <input type="radio" id="q6_yes" name="answer6" value="yes">
+            <label for="q6_yes">Yes</label><br>
+            <input type="radio" id="q6_no" name="answer6" value="no">
+            <label for="q6_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(5)">Previous</button>
+            <button class="nav-btn"  type="button" onclick="nextStep(7)">Next</button>
+        </form>
+    </div>
+
+
+    <div class="question" id="step7" style="display: none;">
+        <h2>Question 7:</h2>
+        <form id="questionForm7">
+            <p class="qn-text" >Have you noticed changes in your sense of taste or difficulty swallowing?
+            </p>
+            <input type="radio" id="q7_yes" name="answer7" value="yes">
+            <label for="q7_yes">Yes</label><br>
+            <input type="radio" id="q7_no" name="answer7" value="no">
+            <label for="q7_no">No</label><br>
+            <button class="nav-btn"  type="button" onclick="prevStep(6)">Previous</button>
+            <a href="/webApp/index.html"><a href="/index.html" class="final-btn" >Submit!</></a>
+            
+        </form>
+    </div>
+</div>
+    
+
+    <script>
+        var currentStep = 1;
+
+        function nextStep(next) {
+            document.getElementById('step' + currentStep).style.display = 'none';
+            document.getElementById('step' + next).style.display = 'block';
+            currentStep = next;
+        }
+
+        function prevStep(prev) {
+            document.getElementById('step' + currentStep).style.display = 'none';
+            document.getElementById('step' + prev).style.display = 'block';
+            currentStep = prev;
+        }
+    </script>
+</body>
+</html>
